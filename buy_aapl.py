@@ -1,11 +1,8 @@
-from alpaca.trading.client import TradingClient
 from alpaca.trading.requests import MarketOrderRequest
 from alpaca.trading.enums import OrderSide, TimeInForce
+from alpaca_client import get_trading_client
 
-API_KEY = "PKRNMDHN2K33GPHRV5GMXQ7C4X"
-API_SECRET = "C2AVwsBj3svNEEJ2EQ288aiRn1mh2cwtUWV7bkCm3FY1"
-
-client = TradingClient(API_KEY, API_SECRET, paper=True)
+client = get_trading_client(paper=True)
 
 # Verify connection
 account = client.get_account()
